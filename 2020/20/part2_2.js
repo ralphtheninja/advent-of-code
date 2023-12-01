@@ -1,6 +1,6 @@
 const { deepStrictEqual } = require('assert')
 const DATA = require('./part2.json')
-const TEST_DATA = require('./part2-test.json')
+// const TEST_DATA = require('./part2-test.json')
 
 const TEST_IMAGE = [
   [
@@ -70,18 +70,18 @@ function computeRoughness (image) {
   }, 0)
 }
 
-function computeMonster (image) {
-  function countOs (line) {
-    let count = 0
-    for (let i = 0; i < line.length; ++i) {
-      if (line[i] === 'O') count++
-    }
-    return count
-  }
-  return image.reduce((total, line) => {
-    return total + countOs(line)
-  }, 0)
-}
+// function computeMonster (image) {
+//   function countOs (line) {
+//     let count = 0
+//     for (let i = 0; i < line.length; ++i) {
+//       if (line[i] === 'O') count++
+//     }
+//     return count
+//   }
+//   return image.reduce((total, line) => {
+//     return total + countOs(line)
+//   }, 0)
+// }
 
 const MONSTER = [
   '                  # ',
@@ -149,7 +149,6 @@ function findSeaMonsters (image) {
       const toCol = j + windowWidth
       if (rowsContainMonster(image.slice(fromRow, toRow + 1), fromCol, toCol)) {
         count++
-        const copy = image.slice()
         const monster = drawMonsterPattern(image.slice(fromRow, toRow + 1), fromCol, toCol)
         monster.forEach((monsterRow, i) => {
           image.splice(fromRow + i, 1, monsterRow)
@@ -166,7 +165,6 @@ function findSeaMonsters (image) {
 // console.log('monsters in total:', count)
 
 DATA.forEach(img => {
-  const preRoughness = computeRoughness(img)
   const { image, count } = findSeaMonsters(img)
   if (count) {
     console.log('monsters in image:', count)

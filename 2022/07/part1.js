@@ -97,6 +97,7 @@ function sumTotal (tree) {
   }, 0)
 }
 
+/*
 function test () {
   const cli = fs.readFileSync('./test-data.txt', 'utf8').split('\n').filter(Boolean)
   const tree = parseCli(cli)
@@ -108,6 +109,8 @@ function test () {
 
   assert.equal(sumTotal(tree), 95437)
 }
+test()
+*/
 
 function run (debug) {
   const cli = fs.readFileSync('./data.txt', 'utf8').split('\n').filter(Boolean)
@@ -116,5 +119,4 @@ function run (debug) {
   return sumTotal(tree)
 }
 
-// test()
 console.log('result', run())

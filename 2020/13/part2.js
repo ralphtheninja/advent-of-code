@@ -1,4 +1,3 @@
-const { deepStrictEqual } = require('assert')
 const DATA = require('fs').readFileSync('./data.txt', 'utf8').split('\n').filter(Boolean)
 
 // It's pretty evident that we can't brute force the timestamps.

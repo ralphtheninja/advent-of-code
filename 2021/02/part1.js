@@ -1,5 +1,5 @@
 const fs = require('fs')
-const assert = require('assert')
+// const assert = require('assert')
 
 function readFile (file) {
   return fs.readFileSync(file, 'utf8').split('\n').filter(Boolean).map(cmd => {
@@ -11,7 +11,7 @@ function readFile (file) {
   })
 }
 
-const directions = readFile('./data.txt')
+// const directions = readFile('./data.txt')
 
 function calculate (commands) {
   const pos = { horizontal: 0, vertical: 0 }

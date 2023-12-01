@@ -1,4 +1,4 @@
-const { deepStrictEqual } = require('assert')
+// const { deepStrictEqual } = require('assert')
 
 const INPUT = [
   '######.#',
@@ -9,12 +9,6 @@ const INPUT = [
   '.######.',
   '###.####',
   '######.#'
-]
-
-const TEST_INPUT = [
-  '.#.',
-  '..#',
-  '###'
 ]
 
 function key (x, y, z) { return `${x},${y},${z}` }
@@ -102,5 +96,11 @@ function simulate (state0, maxCycles) {
   return state.size
 }
 
+// const TEST_INPUT = [
+//   '.#.',
+//   '..#',
+//   '###'
+// ]
 // deepStrictEqual(simulate(TEST_INPUT, 6), 112)
+
 console.log(simulate(INPUT, 6))

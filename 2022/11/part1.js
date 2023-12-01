@@ -14,6 +14,7 @@ function round (monkeys) {
     for (let j = 0; j < items.length; ++j) {
       const item = items[j]
       // console.log('  Monkey inspects an item with a worry level of', item)
+      // eslint-disable-next-line
       let worry = eval(`const old = ${item};${op}`)
       // console.log('    Worry level becomes', worry)
       worry = Math.floor(worry / 3)
@@ -56,7 +57,7 @@ function run (file) {
   monkeys.sort((lhs, rhs) => {
     if (lhs.inspected > rhs.inspected) return -1
     else if (lhs.inspected < rhs.inspected) return 1
-    else if (lhs.inspected === rhs.inspected) return 0
+    else return 0
   })
 
   return monkeys[0].inspected * monkeys[1].inspected

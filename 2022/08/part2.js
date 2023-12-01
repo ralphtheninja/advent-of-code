@@ -1,5 +1,5 @@
 const fs = require('fs')
-const assert = require('assert')
+// const assert = require('assert')
 
 function run (file) {
   const data = fs.readFileSync(file, 'utf8').split('\n').filter(Boolean)

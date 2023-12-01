@@ -83,7 +83,7 @@ function run (file) {
   monkeys.sort((lhs, rhs) => {
     if (lhs.inspected > rhs.inspected) return -1
     else if (lhs.inspected < rhs.inspected) return 1
-    else if (lhs.inspected === rhs.inspected) return 0
+    else return 0
   })
 
   return monkeys[0].inspected * monkeys[1].inspected

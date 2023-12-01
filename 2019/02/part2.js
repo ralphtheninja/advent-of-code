@@ -1,4 +1,3 @@
-const { deepStrictEqual } = require('assert')
 const PROGRAM = require('fs').readFileSync('./data.txt', 'utf8').trim().split(',').map(Number)
 
 function run (prog, noun, verb) {

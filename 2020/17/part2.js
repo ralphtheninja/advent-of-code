@@ -11,12 +11,6 @@ const INPUT = [
   '######.#'
 ]
 
-const TEST_INPUT = [
-  '.#.',
-  '..#',
-  '###'
-]
-
 function key (x, y, z, w) { return `${x},${y},${z},${w}` }
 
 /**
@@ -183,7 +177,13 @@ function simulate (state0, maxCycles) {
   return state.size
 }
 
+// const TEST_INPUT = [
+//   '.#.',
+//   '..#',
+//   '###'
+// ]
 // deepStrictEqual(simulate(TEST_INPUT, 6), 848)
+
 console.time()
 console.log(simulate(INPUT, 6))
 console.timeEnd()

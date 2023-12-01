@@ -1,5 +1,5 @@
 const fs = require('fs')
-const assert = require('assert')
+// const assert = require('assert')
 
 function run (file) {
   const data = fs.readFileSync(file, 'utf8').split('\n').filter(Boolean).map(row => {
@@ -15,7 +15,6 @@ function run (file) {
   const history = []
 
   data.forEach(({ op, val }, i) => {
-    const length = history.length
     if (op === 'addx') {
       history.push(x)
       history.push(x)

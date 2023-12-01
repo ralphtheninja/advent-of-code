@@ -98,6 +98,7 @@ function calculateAllSizes (tree) {
   })
 }
 
+/*
 function sumTotal (tree) {
   const allSizes = calculateAllSizes(tree)
   return allSizes.reduce((tot, folder) => {
@@ -143,6 +144,8 @@ function test () {
 
   assert.equal(candidates[0].size, 24933642)
 }
+test()
+*/
 
 function run (debug) {
   const cli = fs.readFileSync('./data.txt', 'utf8').split('\n').filter(Boolean)
@@ -171,5 +174,4 @@ function run (debug) {
   return candidates[0].size
 }
 
-// test()
 console.log('result', run())

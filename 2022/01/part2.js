@@ -1,5 +1,5 @@
 const fs = require('fs')
-const assert = require('assert')
+// const assert = require('assert')
 
 function sumVector (vec) {
   return vec.reduce((tot, value) => tot + value, 0)

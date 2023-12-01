@@ -1,4 +1,3 @@
-const { deepStrictEqual } = require('assert')
 const DATA = require('fs').readFileSync('./data.txt', 'utf8').split('\n\n').filter(Boolean)
 const CLASSES = {}
 

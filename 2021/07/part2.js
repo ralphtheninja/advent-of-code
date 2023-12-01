@@ -1,5 +1,5 @@
 const fs = require('fs')
-const assert = require('assert')
+// const assert = require('assert')
 
 function readFile (file) {
   return fs.readFileSync(file, 'utf8').split(',').map(Number)
@@ -39,6 +39,7 @@ function findMinCost (positions) {
   return findMin(costs)
 }
 
+/*
 function test () {
   assert.equal(stepsCost(0), 0)
   assert.equal(stepsCost(1), 1)
@@ -58,6 +59,7 @@ function test () {
 
   assert.equal(findMinCost(positions), 168)
 }
+test()
+*/
 
-// test()
 console.log('min cost is', findMinCost(readFile('./data.txt')))

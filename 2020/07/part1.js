@@ -30,7 +30,9 @@ const all = {}
 
 function findAllContainers (bag) {
   const result = findValidContainer(bag)
-  result.forEach(bag => all[bag] = true)
+  result.forEach(bag => {
+    all[bag] = true
+  })
   result.forEach(bag => findAllContainers(bag))
 }
 

@@ -58,7 +58,7 @@ JMP_NOP.forEach(({ instruction, i }) => {
   // Copy the original program.
   const program = readProgram()
   // Replace instruction and run the program.
-  const [cmd, arg] = instruction
+  const cmd = instruction[0]
   if (cmd === 'jmp') {
     program[i][0] = 'nop'
   } else if (cmd === 'nop') {

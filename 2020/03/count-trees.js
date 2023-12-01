@@ -6,7 +6,6 @@ const colCount = map[0].length
 // row indexes 0 -> 322
 const rowCount = map.length
 
-const SPACE = '.'
 const TREE = '#'
 
 function countTrees (xStep, yStep) {

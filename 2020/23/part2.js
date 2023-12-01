@@ -1,4 +1,4 @@
-const { deepStrictEqual } = require('assert')
+// const { deepStrictEqual } = require('assert')
 
 /**
  * Clearly rewriting and searching arrays of 1M and doing this 10M times

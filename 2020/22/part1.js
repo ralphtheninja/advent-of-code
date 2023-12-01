@@ -1,4 +1,4 @@
-const { deepStrictEqual } = require('assert')
+// const { deepStrictEqual } = require('assert')
 const DATA = require('fs').readFileSync('./data.txt', 'utf8').split('\n\n').filter(Boolean)
 
 const player1 = DATA[0].split(':\n')[1].split('\n').filter(Boolean).map(Number)
@@ -35,7 +35,6 @@ function computeScore (hand) {
   }, 0)
 }
 
-let winningHand
 if (player1.length > 0) {
   console.log('winning hand', player1)
   console.log('player 1 won with score', computeScore(player1))

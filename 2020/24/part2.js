@@ -1,4 +1,4 @@
-const { deepStrictEqual } = require('assert')
+// const { deepStrictEqual } = require('assert')
 const fs = require('fs')
 const SQRT = Math.sqrt(3) / 2
 const EPS = 5e-6

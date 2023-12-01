@@ -109,7 +109,9 @@ function initialize (program) {
       if (match) {
         const address = maskedAddress(Number(match[1]), mask)
         const addresses = expandMaskedAddress(address)
-        addresses.forEach(a => mem[a] = Number(arg))
+        addresses.forEach(a => {
+          mem[a] = Number(arg)
+        })
       }
     }
   })

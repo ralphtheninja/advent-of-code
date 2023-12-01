@@ -1,5 +1,5 @@
 const fs = require('fs')
-const assert = require('assert')
+// const assert = require('assert')
 
 function readFile (file) {
   const timers = fs.readFileSync(file, 'utf8').split(',').map(s => s.trim()).map(Number)
@@ -33,6 +33,7 @@ function iterate (state) {
   return result
 }
 
+/*
 function test () {
   // Day 0
   let state = readFile('./test-data.txt')
@@ -262,8 +263,8 @@ function test () {
   }
   assert.equal(Object.values(state).reduce((sum, el) => sum + el, 0), 5934)
 }
-
-// test()
+test()
+*/
 
 let state = readFile('./data.txt')
 for (let i = 0; i < 256; ++i) {

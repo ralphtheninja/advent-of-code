@@ -154,98 +154,82 @@ function getVisibleSeats (state, row, col) {
   const seats = []
 
   // n
-  {
-    for (let d = 1; row - d >= 0; ++d) {
-      if (isSpace(state[row - d][col])) {
-        continue
-      } else {
-        seats.push(state[row - d][col])
-        break
-      }
+  for (let d = 1; row - d >= 0; ++d) {
+    if (isSpace(state[row - d][col])) {
+      continue
+    } else {
+      seats.push(state[row - d][col])
+      break
     }
   }
 
   // ne
-  {
-    for (let d = 1; row - d >= 0 && col + d < colCount; ++d) {
-      if (isSpace(state[row - d][col + d])) {
-        continue
-      } else {
-        seats.push(state[row - d][col + d])
-        break
-      }
+  for (let d = 1; row - d >= 0 && col + d < colCount; ++d) {
+    if (isSpace(state[row - d][col + d])) {
+      continue
+    } else {
+      seats.push(state[row - d][col + d])
+      break
     }
   }
 
   // e
-  {
-    for (let d = 1; col + d < colCount; ++d) {
-      if (isSpace(state[row][col + d])) {
-        continue
-      } else {
-        seats.push(state[row][col + d])
-        break
-      }
+  for (let d = 1; col + d < colCount; ++d) {
+    if (isSpace(state[row][col + d])) {
+      continue
+    } else {
+      seats.push(state[row][col + d])
+      break
     }
   }
 
   // se
-  {
-    for (let d = 1; row + d < rowCount && col + d < colCount; ++d) {
-      if (isSpace(state[row + d][col + d])) {
-        continue
-      } else {
-        seats.push(state[row + d][col + d])
-        break
-      }
+  for (let d = 1; row + d < rowCount && col + d < colCount; ++d) {
+    if (isSpace(state[row + d][col + d])) {
+      continue
+    } else {
+      seats.push(state[row + d][col + d])
+      break
     }
   }
 
   // s
-  {
-    for (let d = 1; row + d < rowCount; ++d) {
-      if (isSpace(state[row + d][col])) {
-        continue
-      } else {
-        seats.push(state[row + d][col])
-        break
-      }
+  for (let d = 1; row + d < rowCount; ++d) {
+    if (isSpace(state[row + d][col])) {
+      continue
+    } else {
+      seats.push(state[row + d][col])
+      break
     }
   }
 
   // sw
-  {
-    for (let d = 1; row + d < rowCount && col - d >= 0; ++d) {
-      if (isSpace(state[row + d][col - d])) {
-        continue
-      } else {
-        seats.push(state[row + d][col - d])
-        break
-      }
+  for (let d = 1; row + d < rowCount && col - d >= 0; ++d) {
+    if (isSpace(state[row + d][col - d])) {
+      continue
+    } else {
+      seats.push(state[row + d][col - d])
+      break
     }
   }
 
   // w
-  {
-    for (let d = 1; col - d >= 0; ++d) {
-      if (isSpace(state[row][col - d])) {
-        continue
-      } else {
-        seats.push(state[row][col - d])
-        break
-      }
+  for (let d = 1; col - d >= 0; ++d) {
+    if (isSpace(state[row][col - d])) {
+      continue
+    } else {
+      seats.push(state[row][col - d])
+      break
     }
   }
 
   // nw
-  {
-    for (let d = 1; row - d >= 0 && col - d >= 0; ++d) {
-      if (isSpace(state[row - d][col - d])) {
-        continue
-      } else {
-        seats.push(state[row - d][col - d])
-        break
-      }
+  for (let d = 1; row - d >= 0 && col - d >= 0; ++d) {
+    if (isSpace(state[row - d][col - d])) {
+      continue
+    } else {
+      seats.push(state[row - d][col - d])
+      break
     }
   }
 

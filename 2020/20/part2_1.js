@@ -11,7 +11,7 @@ function readFile (fileName) {
 }
 
 const DATA = readFile('./data1.txt')
-const TEST_DATA = readFile('./test-data.txt')
+// const TEST_DATA = readFile('./test-data.txt')
 
 function rot90 (cell) {
   const rotated = []
@@ -213,7 +213,7 @@ function joinRowOfTiles (row) {
       row.map(tile => {
         return tile[i]
       }).reduce((tot, str) => {
-        return tot += str
+        return tot + str
       }, '')
     )
   }
@@ -353,7 +353,6 @@ function findSolution (data) {
 
     m.right.forEach(link => {
       const res = [link]
-      let prev = link.from
       let next = link.to
       while (res.length < SIZE) {
         const nextMeta = meta[next.id]
@@ -366,7 +365,6 @@ function findSolution (data) {
                     nextLink.from.id === i.from.id)
           })) {
             res.push(nextLink)
-            prev = next
             next = nextLink.to
           } else {
             break
@@ -387,7 +385,7 @@ function findSolution (data) {
    */
   function findRowCandidates () {
     let result = []
-    data.forEach(d => result = result.concat(findRows(d.id, SIZE)))
+    data.forEach(d => { result = result.concat(findRows(d.id, SIZE)) })
     return result
   }
 
@@ -405,7 +403,6 @@ function findSolution (data) {
         return false
       }
       const fromMeta = meta[from.id]
-      const toMeta = meta[to.id]
       const find = fromMeta.down.find(link => {
         return (link.from.id === from.id &&
                 link.from.perm === from.perm &&

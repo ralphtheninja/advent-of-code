@@ -1,5 +1,5 @@
 const fs = require('fs')
-const assert = require('assert')
+// const assert = require('assert')
 
 function readFile (file) {
   return fs
@@ -78,6 +78,7 @@ function createMap (lines) {
   return map
 }
 
+/*
 function test () {
   let lines = readFile('./test-data.txt')
 
@@ -118,8 +119,8 @@ function test () {
   const map = createMap(lines)
   assert.equal(Object.values(map).filter(v => v >= 2).length, 5)
 }
-
-// test()
+test()
+*/
 
 const lines = readFile('./data.txt').filter(line => isHorizontal(line) || isVertical(line))
 const map = createMap(lines)

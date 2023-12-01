@@ -11,7 +11,6 @@ DATA[0].split('\n').forEach(row => {
   CLASSES[key] = intervals
 })
 
-const MY_TICKET = DATA[1].split('\n')[1].split(',').map(Number)
 const NEARBY_TICKETS = DATA[2].split('\n').slice(1).map(row => {
   return row.split(',').map(Number)
 })

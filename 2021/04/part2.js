@@ -82,7 +82,6 @@ function processBoards (file) {
   const data = readFile(file)
   const { numbers, boards } = data
 
-  const result = { data }
   const boardCount = boards.length
 
   for (const number of numbers) {

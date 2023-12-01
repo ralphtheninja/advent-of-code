@@ -100,6 +100,7 @@ function processBoards (file) {
   }
 }
 
+/*
 function test () {
   assert.equal(hasMarkedRow([
     [{ marked: false }, { marked: false }, { marked: false }],
@@ -195,7 +196,8 @@ function test () {
   assert.equal(sumUnmarked(result.data.boards[2]), 188)
 }
 
-// test()
+test()
+*/
 
 const result = processBoards('./data.txt')
 const winning = result.data.boards[result.winningBoard]

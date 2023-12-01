@@ -308,7 +308,6 @@ function findSolution (data) {
 
     m.right.forEach(link => {
       const res = [link]
-      let prev = link.from
       let next = link.to
       while (res.length < SIZE) {
         const nextMeta = meta[next.id]
@@ -321,7 +320,6 @@ function findSolution (data) {
                     nextLink.from.id === i.from.id)
           })) {
             res.push(nextLink)
-            prev = next
             next = nextLink.to
           } else {
             break
@@ -342,7 +340,7 @@ function findSolution (data) {
    */
   function findRowCandidates () {
     let result = []
-    data.forEach(d => result = result.concat(findRows(d.id, SIZE)))
+    data.forEach(d => { result = result.concat(findRows(d.id, SIZE)) })
     return result
   }
 
@@ -360,7 +358,6 @@ function findSolution (data) {
         return false
       }
       const fromMeta = meta[from.id]
-      const toMeta = meta[to.id]
       const find = fromMeta.down.find(link => {
         return (link.from.id === from.id &&
                 link.from.perm === from.perm &&
@@ -419,54 +416,55 @@ deepStrictEqual(findSolution(TEST_DATA), 20899048083289)
 
 // Test results below.
 
-const rowCandidates = [
-  [{ id: 2311, perm: 1 }, { id: 1427, perm: 1 }, { id: 1489, perm: 1 }], // 0
-  [{ id: 2311, perm: 5 }, { id: 1427, perm: 5 }, { id: 1489, perm: 5 }], // 1
-  [{ id: 1951, perm: 0 }, { id: 2311, perm: 0 }, { id: 3079, perm: 6 }], // 2
-  [{ id: 1951, perm: 6 }, { id: 2311, perm: 6 }, { id: 3079, perm: 0 }], // 3
-  [{ id: 1951, perm: 1 }, { id: 2729, perm: 1 }, { id: 2971, perm: 1 }], // 4
-  [{ id: 1951, perm: 5 }, { id: 2729, perm: 5 }, { id: 2971, perm: 5 }], // 5
-  [{ id: 1171, perm: 0 }, { id: 1489, perm: 2 }, { id: 2971, perm: 2 }], // 6
-  [{ id: 1171, perm: 6 }, { id: 1489, perm: 4 }, { id: 2971, perm: 4 }], // 7
-  [{ id: 1171, perm: 1 }, { id: 2473, perm: 0 }, { id: 3079, perm: 5 }], // 8
-  [{ id: 1171, perm: 5 }, { id: 2473, perm: 6 }, { id: 3079, perm: 1 }], // 9
-  [{ id: 1489, perm: 3 }, { id: 1427, perm: 3 }, { id: 2311, perm: 3 }], // 10
-  [{ id: 1489, perm: 7 }, { id: 1427, perm: 7 }, { id: 2311, perm: 7 }], // 11
-  [{ id: 2473, perm: 3 }, { id: 1427, perm: 2 }, { id: 2729, perm: 2 }], // 12
-  [{ id: 2473, perm: 7 }, { id: 1427, perm: 4 }, { id: 2729, perm: 4 }], // 13
-  [{ id: 2971, perm: 0 }, { id: 1489, perm: 0 }, { id: 1171, perm: 2 }], // 14
-  [{ id: 2971, perm: 6 }, { id: 1489, perm: 6 }, { id: 1171, perm: 4 }], // 15
-  [{ id: 2971, perm: 3 }, { id: 2729, perm: 3 }, { id: 1951, perm: 3 }], // 16
-  [{ id: 2971, perm: 7 }, { id: 2729, perm: 7 }, { id: 1951, perm: 7 }], // 17
-  [{ id: 2729, perm: 0 }, { id: 1427, perm: 0 }, { id: 2473, perm: 1 }], // 18
-  [{ id: 2729, perm: 6 }, { id: 1427, perm: 6 }, { id: 2473, perm: 5 }], // 19
-  [{ id: 3079, perm: 4 }, { id: 2311, perm: 2 }, { id: 1951, perm: 2 }], // 20
-  [{ id: 3079, perm: 2 }, { id: 2311, perm: 4 }, { id: 1951, perm: 4 }], // 21
-  [{ id: 3079, perm: 7 }, { id: 2473, perm: 2 }, { id: 1171, perm: 3 }], // 22
-  [{ id: 3079, perm: 3 }, { id: 2473, perm: 4 }, { id: 1171, perm: 7 }] // 23
-]
+// const rowCandidates = [
+//   [{ id: 2311, perm: 1 }, { id: 1427, perm: 1 }, { id: 1489, perm: 1 }], // 0
+//   [{ id: 2311, perm: 5 }, { id: 1427, perm: 5 }, { id: 1489, perm: 5 }], // 1
+//   [{ id: 1951, perm: 0 }, { id: 2311, perm: 0 }, { id: 3079, perm: 6 }], // 2
+//   [{ id: 1951, perm: 6 }, { id: 2311, perm: 6 }, { id: 3079, perm: 0 }], // 3
+//   [{ id: 1951, perm: 1 }, { id: 2729, perm: 1 }, { id: 2971, perm: 1 }], // 4
+//   [{ id: 1951, perm: 5 }, { id: 2729, perm: 5 }, { id: 2971, perm: 5 }], // 5
+//   [{ id: 1171, perm: 0 }, { id: 1489, perm: 2 }, { id: 2971, perm: 2 }], // 6
+//   [{ id: 1171, perm: 6 }, { id: 1489, perm: 4 }, { id: 2971, perm: 4 }], // 7
+//   [{ id: 1171, perm: 1 }, { id: 2473, perm: 0 }, { id: 3079, perm: 5 }], // 8
+//   [{ id: 1171, perm: 5 }, { id: 2473, perm: 6 }, { id: 3079, perm: 1 }], // 9
+//   [{ id: 1489, perm: 3 }, { id: 1427, perm: 3 }, { id: 2311, perm: 3 }], // 10
+//   [{ id: 1489, perm: 7 }, { id: 1427, perm: 7 }, { id: 2311, perm: 7 }], // 11
+//   [{ id: 2473, perm: 3 }, { id: 1427, perm: 2 }, { id: 2729, perm: 2 }], // 12
+//   [{ id: 2473, perm: 7 }, { id: 1427, perm: 4 }, { id: 2729, perm: 4 }], // 13
+//   [{ id: 2971, perm: 0 }, { id: 1489, perm: 0 }, { id: 1171, perm: 2 }], // 14
+//   [{ id: 2971, perm: 6 }, { id: 1489, perm: 6 }, { id: 1171, perm: 4 }], // 15
+//   [{ id: 2971, perm: 3 }, { id: 2729, perm: 3 }, { id: 1951, perm: 3 }], // 16
+//   [{ id: 2971, perm: 7 }, { id: 2729, perm: 7 }, { id: 1951, perm: 7 }], // 17
+//   [{ id: 2729, perm: 0 }, { id: 1427, perm: 0 }, { id: 2473, perm: 1 }], // 18
+//   [{ id: 2729, perm: 6 }, { id: 1427, perm: 6 }, { id: 2473, perm: 5 }], // 19
+//   [{ id: 3079, perm: 4 }, { id: 2311, perm: 2 }, { id: 1951, perm: 2 }], // 20
+//   [{ id: 3079, perm: 2 }, { id: 2311, perm: 4 }, { id: 1951, perm: 4 }], // 21
+//   [{ id: 3079, perm: 7 }, { id: 2473, perm: 2 }, { id: 1171, perm: 3 }], // 22
+//   [{ id: 3079, perm: 3 }, { id: 2473, perm: 4 }, { id: 1171, perm: 7 }] // 23
+// ]
 
 // Pairs from test data:
-const pairs = [
-  [0, 22],
-  [1, 5],
-  [3, 19],
-  [4, 0],
-  [7, 13],
-  [8, 10],
-  [10, 16],
-  [11, 9],
-  [12, 6],
-  [13, 21],
-  [14, 18],
-  [17, 11],
-  [18, 2],
-  [19, 15],
-  [20, 12],
-  [23, 1]
-]
+// const pairs = [
+//   [0, 22],
+//   [1, 5],
+//   [3, 19],
+//   [4, 0],
+//   [7, 13],
+//   [8, 10],
+//   [10, 16],
+//   [11, 9],
+//   [12, 6],
+//   [13, 21],
+//   [14, 18],
+//   [17, 11],
+//   [18, 2],
+//   [19, 15],
+//   [20, 12],
+//   [23, 1]
+// ]
 
 // Goal: Find two (SIZE - 1) row pairs that fit together
+/*
 const possiblePairs = [
   [[3, 19], [19, 15]], // VALID! (as the website shows)
   // [ { id: 1951, perm: 6 }, { id: 2311, perm: 6 }, { id: 3079, perm: 0 } ], // 3
@@ -508,6 +506,7 @@ const possiblePairs = [
   // [ { id: 2311, perm: 1 }, { id: 1427, perm: 1 }, { id: 1489, perm: 1 } ], // 0
   // [ { id: 3079, perm: 7 }, { id: 2473, perm: 2 }, { id: 1171, perm: 3 } ], // 22
 ]
+*/
 
 // Funny result that we get eight different versions of the resulting image, since
 // we can use the same eight permutations to get eight different versions of the image

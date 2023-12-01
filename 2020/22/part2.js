@@ -81,15 +81,15 @@ function computeScore (hand) {
   }, 0)
 }
 
-const INF_TEST = {
-  p1: [43, 19],
-  p2: [2, 29, 14]
-}
+// const INF_TEST = {
+//   p1: [43, 19],
+//   p2: [2, 29, 14]
+// }
 
-const TEST = {
-  p1: [9, 2, 6, 3, 1],
-  p2: [5, 8, 4, 7, 10]
-}
+// const TEST = {
+//   p1: [9, 2, 6, 3, 1],
+//   p2: [5, 8, 4, 7, 10]
+// }
 
 // const inf = playGame(INF_TEST.p1, INF_TEST.p2)
 // deepStrictEqual(inf.won, 'p1')
