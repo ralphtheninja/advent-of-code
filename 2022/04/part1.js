@@ -8,7 +8,7 @@ function contains (one, two) {
 function run (file) {
   const data = fs.readFileSync(file, 'utf8').split('\n').filter(Boolean)
   const pairs = data.map(pair => {
-    const [ one, two ] = pair.split(',')
+    const [one, two] = pair.split(',')
     return {
       one: one.split('-').map(Number),
       two: two.split('-').map(Number)
@@ -19,12 +19,12 @@ function run (file) {
   }, 0)
 }
 
-assert.equal(contains([ 6, 6 ], [ 4, 6 ]), false)
-assert.equal(contains([ 4, 6 ], [ 6, 6 ]), true)
-assert.equal(contains([ 2, 8 ], [ 3, 7 ]), true)
-assert.equal(contains([ 3, 7 ], [ 2, 8 ]), false)
-assert.equal(contains([ 5, 7 ], [ 7, 9 ]), false)
-assert.equal(contains([ 7, 9 ], [ 5, 7 ]), false)
+assert.equal(contains([6, 6], [4, 6]), false)
+assert.equal(contains([4, 6], [6, 6]), true)
+assert.equal(contains([2, 8], [3, 7]), true)
+assert.equal(contains([3, 7], [2, 8]), false)
+assert.equal(contains([5, 7], [7, 9]), false)
+assert.equal(contains([7, 9], [5, 7]), false)
 
-//assert.equal(run('./test-data.txt'), 2)
+// assert.equal(run('./test-data.txt'), 2)
 console.log('total score', run('./data.txt'))

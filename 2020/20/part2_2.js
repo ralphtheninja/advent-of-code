@@ -27,7 +27,7 @@ const TEST_IMAGE = [
     '#.#####..#.#...##..#....',
     '#....##..#.#########..##',
     '#...#.....#..##...###.##',
-    '#..###....##.#...##.##.#',
+    '#..###....##.#...##.##.#'
   ],
   [
     '.####...#####..#...###..',
@@ -53,7 +53,7 @@ const TEST_IMAGE = [
     '#.#####..#.#...##..#....',
     '#....##..#.#########..##',
     '#...#.....#..##...###.##',
-    '#..###....##.#...##.##.#',
+    '#..###....##.#...##.##.#'
   ]
 ]
 
@@ -161,9 +161,9 @@ function findSeaMonsters (image) {
   return { image, count }
 }
 
-//const { image, count } = findSeaMonsters(TEST_IMAGE[1])
-//deepStrictEqual(computeRoughness(image), 273)
-//console.log('monsters in total:', count)
+// const { image, count } = findSeaMonsters(TEST_IMAGE[1])
+// deepStrictEqual(computeRoughness(image), 273)
+// console.log('monsters in total:', count)
 
 DATA.forEach(img => {
   const preRoughness = computeRoughness(img)

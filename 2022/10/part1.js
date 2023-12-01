@@ -28,5 +28,5 @@ function run (file) {
   return [20, 60, 100, 140, 180, 220].map(pos => pos * history[pos - 1]).reduce((tot, val) => tot + val, 0)
 }
 
-//assert.equal(run('./test-data.txt'), 13140)
+// assert.equal(run('./test-data.txt'), 13140)
 console.log('result', run('./data.txt'))

@@ -6,7 +6,7 @@ function pickUp (current, cups) {
   while (count < 3) {
     const index = cups.indexOf(current)
     notEqual(index, -1, 'current must exist')
-    if (index >=0 && index < cups.length - 1) {
+    if (index >= 0 && index < cups.length - 1) {
       out.push(cups.splice(index + 1, 1)[0])
     } else if (index === cups.length - 1) {
       out.push(cups.splice(0, 1)[0])
@@ -54,7 +54,7 @@ deepStrictEqual(cupsResult([5, 8, 3, 7, 4, 9, 2, 6, 1]), '58374926')
 
 function moveCups (CUPS, MAX_MOVES) {
   let moves = 0
-  let cups = CUPS.split('').map(Number)
+  const cups = CUPS.split('').map(Number)
   let current = cups[0]
 
   while (moves < MAX_MOVES) {
@@ -65,7 +65,7 @@ function moveCups (CUPS, MAX_MOVES) {
     pick.reverse().forEach(el => cups.splice(destinationIndex + 1, 0, el))
     console.log('destination', destination, 'destination index', destinationIndex, 'cups after', cups)
     const currentIndex = cups.indexOf(current)
-    let newCurrentIndex = currentIndex <= cups.length - 2 ? currentIndex + 1 : 0
+    const newCurrentIndex = currentIndex <= cups.length - 2 ? currentIndex + 1 : 0
     current = cups[newCurrentIndex]
     console.log('new current', current)
     moves++
@@ -74,6 +74,6 @@ function moveCups (CUPS, MAX_MOVES) {
   return cupsResult(cups)
 }
 
-//deepStrictEqual(moveCups('389125467', 10), '92658374')
-//deepStrictEqual(moveCups('389125467', 100), '67384529')
+// deepStrictEqual(moveCups('389125467', 10), '92658374')
+// deepStrictEqual(moveCups('389125467', 100), '67384529')
 console.log('result:', moveCups('215694783', 100))

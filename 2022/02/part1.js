@@ -27,12 +27,11 @@ function handToNumber (hand) {
 function run (file) {
   const data = fs.readFileSync(file, 'utf8')
   const matches = data.split('\n').filter(Boolean).map(row => {
-    const [ oppHand, myHand ] = row.split(' ')
+    const [oppHand, myHand] = row.split(' ')
     return { opp: handToNumber(oppHand), me: handToNumber(myHand) }
   })
   return matches.map(matchScore).reduce((tot, val) => tot + val, 0)
 }
-
 
 assert.equal(isDraw({ opp: ROCK, me: ROCK }), true)
 assert.equal(isDraw({ opp: PAPER, me: PAPER }), true)

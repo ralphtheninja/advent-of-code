@@ -63,4 +63,3 @@ for (let i = 0; i < seatIds.length - 1; ++i) {
     console.log('found discrepancy at', i, a, b)
   }
 }
-

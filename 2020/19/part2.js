@@ -42,7 +42,7 @@ const TEST_RULES2 = [
   '9: 14 27 | 1 26',
   '10: 23 14 | 28 1',
   '1: "a"',
-  '11: 42 31 | 42 11 31',  // modified!
+  '11: 42 31 | 42 11 31', // modified!
   '5: 1 14 | 15 1',
   '19: 14 1 | 14 14',
   '12: 24 14 | 19 1',
@@ -64,7 +64,7 @@ const TEST_RULES2 = [
   '21: 14 1 | 1 14',
   '25: 1 1 | 1 14',
   '22: 14 14',
-  '8: 42 | 42 8',          // modified!
+  '8: 42 | 42 8', // modified!
   '26: 14 22 | 1 20',
   '18: 15 15',
   '7: 14 5 | 1 21',
@@ -73,7 +73,7 @@ const TEST_RULES2 = [
 const TEST_MESSAGES = [
   'abbbbbabbbaaaababbaabbbbabababbbabbbbbbabaaaa',
   'bbabbbbaabaabba',
-  'babbbbaabbbbbabbbbbbaabaaabaaa',  // doesn't match but should
+  'babbbbaabbbbbabbbbbbaabaaabaaa', // doesn't match but should
   'aaabbbbbbaaaabaababaabababbabaaabbababababaaa',
   'bbbbbbbaaaabbbbaaabbabaaa', // doesn't match but should
   'bbbababbbbaaaaaaaabbababaaababaabab', // same
@@ -108,7 +108,7 @@ function countMatches (rules, messages) {
     let prefix = ''
     let j = 0
     while (j < stack.length - 1) { prefix += '='; ++j }
-    //console.log.apply(null, [ prefix, ...args])
+    // console.log.apply(null, [ prefix, ...args])
   }
 
   function printStack () {
@@ -135,10 +135,10 @@ function countMatches (rules, messages) {
           print('trying rule', rule)
 
           if (rest === '' && rule === '31' && i === 1) {
-            //printStack()
-            //console.log('RULE', rule, 'and empty string')
-            //console.log('sub rule is', subRule, 'and index', i)
-            //throw new Error('we are trying to match an empty string')
+            // printStack()
+            // console.log('RULE', rule, 'and empty string')
+            // console.log('sub rule is', subRule, 'and index', i)
+            // throw new Error('we are trying to match an empty string')
 
             stack.pop()
             break
@@ -172,9 +172,9 @@ function countMatches (rules, messages) {
       return rest
     } else {
       const match = message.match(new RegExp(subRules))
-      //return (match && match.index === 0 ? message.substr(match[0].length) : null)
+      // return (match && match.index === 0 ? message.substr(match[0].length) : null)
       if (match && match.index === 0) {
-        //return message.substr(match[0].length)
+        // return message.substr(match[0].length)
         const rest = message.substr(match[0].length)
         print('we just ate', match[0], 'returning rest', rest)
         stack.pop()
@@ -196,7 +196,7 @@ function countMatches (rules, messages) {
 }
 
 // This works!
-//deepStrictEqual(countMatches(TEST_RULES, TEST_MESSAGES), 3)
+// deepStrictEqual(countMatches(TEST_RULES, TEST_MESSAGES), 3)
 
 // Matches the following (15 characters long)
 // bbabbbbaabaabba
@@ -206,7 +206,7 @@ function countMatches (rules, messages) {
 // We get 6 matches instead of 12, which is twice the amount.
 // I think we don't get all the results because the first sub
 // group succeeds and we don't try the second alternative?
-//countMatches(TEST_RULES2, TEST_MESSAGES)
+// countMatches(TEST_RULES2, TEST_MESSAGES)
 
 // With updated test rules, we actually get the following:
 
@@ -240,7 +240,6 @@ function countMatches (rules, messages) {
 // aaaaabbaabaaaaababaa
 // aabbbbbaabbbaaaaaabbbbbababaaaaabbaaabba
 
-
 // After tweaks we now get 13 matches! One more that shouldn't match! Which one and why?
 // bbabbbbaabaabba (ok)
 // babbbbaabbbbbabbbbbbaabaaabaaa (ok)
@@ -256,8 +255,7 @@ function countMatches (rules, messages) {
 // aaaabbaabbaaaaaaabbbabbbaaabbaabaaa (ok)
 // aabbbbbaabbbaaaaaabbbbbababaaaaabbaaabba (ok)
 
-
-//deepStrictEqual(countMatches(TEST_RULES2, TEST_MESSAGES), 12)
+// deepStrictEqual(countMatches(TEST_RULES2, TEST_MESSAGES), 12)
 
 console.log('Total matched messages: ', countMatches(RULES, MESSAGES))
 

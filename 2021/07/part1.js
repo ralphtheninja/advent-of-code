@@ -7,7 +7,7 @@ function readFile (file) {
 
 function calculateCost (positions, from) {
   let cost = 0
-  for (let to of positions) {
+  for (const to of positions) {
     cost += Math.abs(from - to)
   }
   return cost

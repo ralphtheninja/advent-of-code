@@ -51,7 +51,7 @@ function run (program) {
 const JMP_NOP = readProgram().map((instruction, i) => {
   return { instruction, i }
 }).filter(({ instruction }) => {
-  return ['jmp','nop'].includes(instruction[0])
+  return ['jmp', 'nop'].includes(instruction[0])
 })
 
 JMP_NOP.forEach(({ instruction, i }) => {

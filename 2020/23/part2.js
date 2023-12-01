@@ -91,5 +91,5 @@ function moveCups (CUPS, MAX_MOVES) {
   return one.next.value * one.next.next.value
 }
 
-//deepStrictEqual(moveCups('389125467', 10000000), 934001 * 159792)
+// deepStrictEqual(moveCups('389125467', 10000000), 934001 * 159792)
 console.log('result:', moveCups('215694783', 10000000))

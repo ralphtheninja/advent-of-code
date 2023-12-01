@@ -52,12 +52,11 @@ function handToNumber (hand) {
 function run (file) {
   const data = fs.readFileSync(file, 'utf8')
   const matches = data.split('\n').filter(Boolean).map(row => {
-    const [ oppHand, outcome ] = row.split(' ')
+    const [oppHand, outcome] = row.split(' ')
     return { opp: handToNumber(oppHand), outcome }
   })
   return matches.map(matchScore).reduce((tot, val) => tot + val, 0)
 }
-
 
 assert.equal(winning(ROCK), PAPER)
 assert.equal(winning(PAPER), SCISSORS)

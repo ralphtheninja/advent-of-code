@@ -20,7 +20,7 @@ function countTrees (xStep, yStep) {
       const row = map[position.y]
       if (row[position.x] === TREE) {
         numberOfTrees++
-       }
+      }
     }
   } while (position.y <= rowCount - 1)
 
@@ -28,7 +28,7 @@ function countTrees (xStep, yStep) {
 }
 
 // part 1
-//console.log(countTrees(3, 1))
+// console.log(countTrees(3, 1))
 
 // part 2
 console.log(

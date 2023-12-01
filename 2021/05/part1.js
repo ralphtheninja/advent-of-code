@@ -81,37 +81,37 @@ function createMap (lines) {
 function test () {
   let lines = readFile('./test-data.txt')
 
-  assert(isHorizontal({ from: [ 0, 9 ], to: [ 5, 9 ] }))
-  assert(!isVertical({ from: [ 0, 9 ], to: [ 5, 9 ] }))
-  assert(isHorizontal({ from: [ 0, 9 ], to: [ 2, 9 ] }))
-  assert(!isVertical({ from: [ 0, 9 ], to: [ 2, 9 ] }))
-  assert(isVertical({ from: [ 2, 2 ], to: [ 2, 1 ] }))
-  assert(isVertical({ from: [ 7, 0 ], to: [ 7, 3 ] }))
-  assert(!isHorizontal({ from: [ 2, 2 ], to: [ 2, 1 ] }))
+  assert(isHorizontal({ from: [0, 9], to: [5, 9] }))
+  assert(!isVertical({ from: [0, 9], to: [5, 9] }))
+  assert(isHorizontal({ from: [0, 9], to: [2, 9] }))
+  assert(!isVertical({ from: [0, 9], to: [2, 9] }))
+  assert(isVertical({ from: [2, 2], to: [2, 1] }))
+  assert(isVertical({ from: [7, 0], to: [7, 3] }))
+  assert(!isHorizontal({ from: [2, 2], to: [2, 1] }))
 
   assert.deepEqual(
     getCoordinates(
-      { from: [ 0, 9 ], to: [ 5, 9 ] }
+      { from: [0, 9], to: [5, 9] }
     ),
-    [ [ 0, 9 ], [ 1, 9 ], [ 2, 9 ], [ 3, 9 ], [ 4, 9 ], [ 5, 9 ] ]
+    [[0, 9], [1, 9], [2, 9], [3, 9], [4, 9], [5, 9]]
   )
   assert.deepEqual(
     getCoordinates(
-      { from: [ 0, 9 ], to: [ 2, 9 ] }
+      { from: [0, 9], to: [2, 9] }
     ),
-    [ [ 0, 9 ], [ 1, 9 ], [ 2, 9 ] ]
+    [[0, 9], [1, 9], [2, 9]]
   )
   assert.deepEqual(
     getCoordinates(
-      { from: [ 2, 2 ], to: [ 2, 1 ] }
+      { from: [2, 2], to: [2, 1] }
     ),
-    [ [ 2, 1 ], [ 2, 2 ] ]
+    [[2, 1], [2, 2]]
   )
   assert.deepEqual(
     getCoordinates(
-      { from: [ 7, 0 ], to: [ 7, 3 ] }
+      { from: [7, 0], to: [7, 3] }
     ),
-    [ [ 7, 0 ], [ 7, 1 ], [ 7, 2 ], [ 7, 3 ] ]
+    [[7, 0], [7, 1], [7, 2], [7, 3]]
   )
 
   lines = lines.filter(line => isHorizontal(line) || isVertical(line))

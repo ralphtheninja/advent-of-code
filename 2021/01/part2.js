@@ -40,4 +40,3 @@ assert.deepEqual(
 assert.equal(countIncreases(slidingWindow(TEST)), 5)
 
 console.log('total increases', countIncreases(slidingWindow(numbers)))
-

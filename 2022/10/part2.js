@@ -41,5 +41,5 @@ function run (file) {
   }
 }
 
-//run('./test-data.txt')
+// run('./test-data.txt')
 run('./data.txt')

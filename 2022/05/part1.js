@@ -72,5 +72,5 @@ function run (file) {
   }).join('')
 }
 
-//assert.equal(run('./test-data.txt'), 'CMZ')
+// assert.equal(run('./test-data.txt'), 'CMZ')
 console.log('result', run('./data.txt'))

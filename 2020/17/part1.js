@@ -51,11 +51,11 @@ function getNeighbors (x, y, z) {
     key(x + 1, y, z + 1),
     key(x - 1, y + 1, z + 1),
     key(x, y + 1, z + 1),
-    key(x + 1, y + 1, z + 1),
+    key(x + 1, y + 1, z + 1)
   ]
 }
 
-//deepStrictEqual(getNeighbors(0, 0, 0).length, 26)
+// deepStrictEqual(getNeighbors(0, 0, 0).length, 26)
 
 function simulate (state0, maxCycles) {
   let state = new Set()
@@ -70,7 +70,7 @@ function simulate (state0, maxCycles) {
   })
 
   function nextState (prev) {
-    let next = new Set()
+    const next = new Set()
 
     for (let x = -SIZE; x < SIZE; ++x) {
       for (let y = -SIZE; y < SIZE; ++y) {
@@ -102,5 +102,5 @@ function simulate (state0, maxCycles) {
   return state.size
 }
 
-//deepStrictEqual(simulate(TEST_INPUT, 6), 112)
+// deepStrictEqual(simulate(TEST_INPUT, 6), 112)
 console.log(simulate(INPUT, 6))

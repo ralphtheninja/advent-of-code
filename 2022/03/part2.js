@@ -2,7 +2,7 @@ const fs = require('fs')
 const assert = require('assert')
 
 function findCommonLetter (group) {
-  const [ first, second, third ] = group
+  const [first, second, third] = group
   const length = first.length
   for (let i = 0; i < length; ++i) {
     const c = first[i]

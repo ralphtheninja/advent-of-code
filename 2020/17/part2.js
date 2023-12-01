@@ -36,7 +36,6 @@ function getNeighbors (x, y, z, w) {
     key(x, y + 1, z - 1, w - 1),
     key(x + 1, y + 1, z - 1, w - 1),
 
-
     key(x - 1, y - 1, z, w - 1),
     key(x, y - 1, z, w - 1),
     key(x + 1, y - 1, z, w - 1),
@@ -48,7 +47,6 @@ function getNeighbors (x, y, z, w) {
     key(x - 1, y + 1, z, w - 1),
     key(x, y + 1, z, w - 1),
     key(x + 1, y + 1, z, w - 1),
-
 
     key(x - 1, y - 1, z + 1, w - 1),
     key(x, y - 1, z + 1, w - 1),
@@ -62,10 +60,6 @@ function getNeighbors (x, y, z, w) {
     key(x, y + 1, z + 1, w - 1),
     key(x + 1, y + 1, z + 1, w - 1),
 
-
-
-
-
     key(x - 1, y - 1, z - 1, w),
     key(x, y - 1, z - 1, w),
     key(x + 1, y - 1, z - 1, w),
@@ -77,7 +71,6 @@ function getNeighbors (x, y, z, w) {
     key(x - 1, y + 1, z - 1, w),
     key(x, y + 1, z - 1, w),
     key(x + 1, y + 1, z - 1, w),
-
 
     key(x - 1, y - 1, z, w),
     key(x, y - 1, z, w),
@@ -91,7 +84,6 @@ function getNeighbors (x, y, z, w) {
     key(x, y + 1, z, w),
     key(x + 1, y + 1, z, w),
 
-
     key(x - 1, y - 1, z + 1, w),
     key(x, y - 1, z + 1, w),
     key(x + 1, y - 1, z + 1, w),
@@ -103,10 +95,6 @@ function getNeighbors (x, y, z, w) {
     key(x - 1, y + 1, z + 1, w),
     key(x, y + 1, z + 1, w),
     key(x + 1, y + 1, z + 1, w),
-
-
-
-
 
     key(x - 1, y - 1, z - 1, w + 1),
     key(x, y - 1, z - 1, w + 1),
@@ -120,7 +108,6 @@ function getNeighbors (x, y, z, w) {
     key(x, y + 1, z - 1, w + 1),
     key(x + 1, y + 1, z - 1, w + 1),
 
-
     key(x - 1, y - 1, z, w + 1),
     key(x, y - 1, z, w + 1),
     key(x + 1, y - 1, z, w + 1),
@@ -133,7 +120,6 @@ function getNeighbors (x, y, z, w) {
     key(x, y + 1, z, w + 1),
     key(x + 1, y + 1, z, w + 1),
 
-
     key(x - 1, y - 1, z + 1, w + 1),
     key(x, y - 1, z + 1, w + 1),
     key(x + 1, y - 1, z + 1, w + 1),
@@ -144,7 +130,7 @@ function getNeighbors (x, y, z, w) {
 
     key(x - 1, y + 1, z + 1, w + 1),
     key(x, y + 1, z + 1, w + 1),
-    key(x + 1, y + 1, z + 1, w + 1),
+    key(x + 1, y + 1, z + 1, w + 1)
   ]
 }
 
@@ -163,7 +149,7 @@ function simulate (state0, maxCycles) {
   })
 
   function nextState (prev) {
-    let next = new Set()
+    const next = new Set()
 
     for (let x = -SIZE; x < SIZE; ++x) {
       for (let y = -SIZE; y < SIZE; ++y) {
@@ -197,7 +183,7 @@ function simulate (state0, maxCycles) {
   return state.size
 }
 
-//deepStrictEqual(simulate(TEST_INPUT, 6), 848)
+// deepStrictEqual(simulate(TEST_INPUT, 6), 848)
 console.time()
 console.log(simulate(INPUT, 6))
 console.timeEnd()

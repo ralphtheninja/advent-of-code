@@ -29,7 +29,7 @@ function rot180 (cell) {
   const result = []
   for (let i = cell.length - 1; i >= 0; --i) {
     let str = ''
-    for (let j = cell[i].length - 1; j >=0; --j) {
+    for (let j = cell[i].length - 1; j >= 0; --j) {
       str += cell[i][j]
     }
     result.push(str)
@@ -53,7 +53,7 @@ function flip (cell) {
   const result = []
   for (let i = 0; i < cell.length; ++i) {
     let str = ''
-    for (let j = cell[i].length - 1; j >=0; --j) {
+    for (let j = cell[i].length - 1; j >= 0; --j) {
       str += cell[i][j]
     }
     result.push(str)
@@ -160,7 +160,7 @@ const TEST_TILES_NO_BORDER = [
     '#.#.##.#',
     '.#.#...#',
     '#####..#',
-    '.####...',
+    '.####...'
   ],
   [
     '....#...',
@@ -170,7 +170,7 @@ const TEST_TILES_NO_BORDER = [
     '##.#.##.',
     '.###...#',
     '..#.#.##',
-    '#####..#',
+    '#####..#'
   ],
   [
     '###.#...',
@@ -180,7 +180,7 @@ const TEST_TILES_NO_BORDER = [
     '##.#####',
     '.##.##..',
     '##..#.#.',
-    '...###..',
+    '...###..'
   ]
 ]
 
@@ -192,7 +192,7 @@ const JOINED_TEST_TILES = [
   '#.#.##.###.#.##.##.#####',
   '.#.#...#.###...#.##.##..',
   '#####..#..#.#.####..#.#.',
-  '.####...#####..#...###..',
+  '.####...#####..#...###..'
 ]
 
 function removeTileBorders (tile) {
@@ -427,7 +427,7 @@ function findSolution (data) {
     for (let j = 0; j < rowCandidates.length; ++j) {
       if (i === j) continue
       if (rowFits(rowCandidates[i], rowCandidates[j])) {
-        rowPairs.push([ i, j ])
+        rowPairs.push([i, j])
       }
     }
   }
@@ -437,9 +437,9 @@ function findSolution (data) {
   // Time to find SIZE - 1 row pairs that fit together
   for (let i = 0; i < rowPairs.length; ++i) {
     let currentPair = rowPairs[i]
-    let allRows = [currentPair]
+    const allRows = [currentPair]
     while (allRows.length < SIZE - 1) {
-      let next = currentPair[1]
+      const next = currentPair[1]
       const search = rowPairs.find(p => {
         return p[0] === next
       })
@@ -466,7 +466,7 @@ function findSolution (data) {
         const row = rowCandidates[rowIndex]
         return joinRowOfTiles(row.map(tile => {
           const tileMeta = meta[tile.id]
-          let transformed = PERMUTATIONS[tile.perm](tileMeta.tile)
+          const transformed = PERMUTATIONS[tile.perm](tileMeta.tile)
           return removeTileBorders(transformed)
         }))
       })
@@ -476,5 +476,5 @@ function findSolution (data) {
 
 // write all image versions to .json files -> use in part2_2.js
 const result = findSolution(DATA)
-//const result = findSolution(TEST_DATA)
+// const result = findSolution(TEST_DATA)
 console.log(JSON.stringify(result, null, 2))

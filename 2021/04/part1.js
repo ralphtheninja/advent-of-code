@@ -102,44 +102,44 @@ function processBoards (file) {
 
 function test () {
   assert.equal(hasMarkedRow([
-    [ { marked: false }, { marked: false }, { marked: false } ],
-    [ { marked: true }, { marked: true }, { marked: true } ],
-    [ { marked: false }, { marked: false }, { marked: false } ]
+    [{ marked: false }, { marked: false }, { marked: false }],
+    [{ marked: true }, { marked: true }, { marked: true }],
+    [{ marked: false }, { marked: false }, { marked: false }]
   ]), true)
   assert.equal(hasMarkedRow([
-    [ { marked: true }, { marked: true }, { marked: true } ],
-    [ { marked: false }, { marked: false }, { marked: false } ],
-    [ { marked: false }, { marked: false }, { marked: false } ]
+    [{ marked: true }, { marked: true }, { marked: true }],
+    [{ marked: false }, { marked: false }, { marked: false }],
+    [{ marked: false }, { marked: false }, { marked: false }]
   ]), true)
   assert.equal(hasMarkedRow([
-    [ { marked: false }, { marked: false }, { marked: false } ],
-    [ { marked: false }, { marked: false }, { marked: false } ],
-    [ { marked: true }, { marked: true }, { marked: true } ]
+    [{ marked: false }, { marked: false }, { marked: false }],
+    [{ marked: false }, { marked: false }, { marked: false }],
+    [{ marked: true }, { marked: true }, { marked: true }]
   ]), true)
   assert.equal(hasMarkedRow([
-    [ { marked: false }, { marked: false }, { marked: false } ],
-    [ { marked: false }, { marked: false }, { marked: false } ],
-    [ { marked: false }, { marked: false }, { marked: false } ]
+    [{ marked: false }, { marked: false }, { marked: false }],
+    [{ marked: false }, { marked: false }, { marked: false }],
+    [{ marked: false }, { marked: false }, { marked: false }]
   ]), false)
   assert.equal(hasMarkedColumn([
-    [ { marked: true }, { marked: false }, { marked: false } ],
-    [ { marked: true }, { marked: false }, { marked: false } ],
-    [ { marked: true }, { marked: false }, { marked: false } ]
+    [{ marked: true }, { marked: false }, { marked: false }],
+    [{ marked: true }, { marked: false }, { marked: false }],
+    [{ marked: true }, { marked: false }, { marked: false }]
   ]), true)
   assert.equal(hasMarkedColumn([
-    [ { marked: false }, { marked: true }, { marked: false } ],
-    [ { marked: false }, { marked: true }, { marked: false } ],
-    [ { marked: false }, { marked: true }, { marked: false } ]
+    [{ marked: false }, { marked: true }, { marked: false }],
+    [{ marked: false }, { marked: true }, { marked: false }],
+    [{ marked: false }, { marked: true }, { marked: false }]
   ]), true)
   assert.equal(hasMarkedColumn([
-    [ { marked: false }, { marked: false }, { marked: true } ],
-    [ { marked: false }, { marked: false }, { marked: true } ],
-    [ { marked: false }, { marked: false }, { marked: true } ]
+    [{ marked: false }, { marked: false }, { marked: true }],
+    [{ marked: false }, { marked: false }, { marked: true }],
+    [{ marked: false }, { marked: false }, { marked: true }]
   ]), true)
   assert.equal(hasMarkedColumn([
-    [ { marked: false }, { marked: false }, { marked: false } ],
-    [ { marked: false }, { marked: false }, { marked: false } ],
-    [ { marked: false }, { marked: false }, { marked: false } ]
+    [{ marked: false }, { marked: false }, { marked: false }],
+    [{ marked: false }, { marked: false }, { marked: false }],
+    [{ marked: false }, { marked: false }, { marked: false }]
   ]), false)
 
   const tempBoard = [
@@ -200,4 +200,3 @@ function test () {
 const result = processBoards('./data.txt')
 const winning = result.data.boards[result.winningBoard]
 console.log('SCORE IS', sumUnmarked(winning) * result.winningNumber)
-

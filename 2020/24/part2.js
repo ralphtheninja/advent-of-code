@@ -1,6 +1,6 @@
 const { deepStrictEqual } = require('assert')
 const fs = require('fs')
-const SQRT = Math.sqrt(3)/2
+const SQRT = Math.sqrt(3) / 2
 const EPS = 5e-6
 
 function readFile (file) {
@@ -13,7 +13,7 @@ function readFile (file) {
 
 function parseRow (row) {
   const result = []
-  let i = 0;
+  let i = 0
   while (i < row.length) {
     const char = row[i]
     if (char === 'e' || char === 'w') {
@@ -37,8 +37,8 @@ const isEven = i => i % 2 === 0
  */
 function createGrid (size) {
   const grid = {}
-  for (let row = -size/2; row <= size/2-1; ++row) {
-    for (let col = -size/2; col <= size/2-1; ++col) {
+  for (let row = -size / 2; row <= size / 2 - 1; ++row) {
+    for (let col = -size / 2; col <= size / 2 - 1; ++col) {
       const tile = {
         x: col + (isEven(row) ? 0 : 0.5),
         y: row * SQRT,
@@ -64,16 +64,16 @@ function getInitialFlips (rows) {
       } else if (move === 'w') {
         tile.x--
       } else if (move === 'nw') {
-        tile.x -= 1/2
+        tile.x -= 1 / 2
         tile.y += SQRT
       } else if (move === 'ne') {
-        tile.x += 1/2
+        tile.x += 1 / 2
         tile.y += SQRT
       } else if (move === 'sw') {
-        tile.x -= 1/2
+        tile.x -= 1 / 2
         tile.y -= SQRT
       } else if (move === 'se') {
-        tile.x += 1/2
+        tile.x += 1 / 2
         tile.y -= SQRT
       } else {
         throw new Error('should not happen')
@@ -124,21 +124,21 @@ function startFlipping (data, size) {
     const [col, row] = key.split(',').map(Number)
     if (isEven(row)) {
       return [
-        `${col - 1},${row}`,     // w
-        `${col + 1},${row}`,     // e
-        `${col},${row + 1}`,     // ne
-        `${col},${row - 1}`,     // se
+        `${col - 1},${row}`, // w
+        `${col + 1},${row}`, // e
+        `${col},${row + 1}`, // ne
+        `${col},${row - 1}`, // se
         `${col - 1},${row + 1}`, // nw
-        `${col - 1},${row - 1}`  // sw
+        `${col - 1},${row - 1}` // sw
       ]
     } else {
       return [
-        `${col - 1},${row}`,     // w
-        `${col + 1},${row}`,     // e
+        `${col - 1},${row}`, // w
+        `${col + 1},${row}`, // e
         `${col + 1},${row + 1}`, // ne
         `${col + 1},${row - 1}`, // se
-        `${col},${row + 1}`,     // nw
-        `${col},${row - 1}`      // sw
+        `${col},${row + 1}`, // nw
+        `${col},${row - 1}` // sw
       ]
     }
   }
@@ -181,4 +181,3 @@ function startFlipping (data, size) {
 }
 
 console.log(startFlipping(readFile('./data.txt'), 300))
-

@@ -67,5 +67,5 @@ function run (file) {
   return maxScore
 }
 
-//assert.equal(run('./test-data.txt'), 8)
+// assert.equal(run('./test-data.txt'), 8)
 console.log('max score', run('./data.txt'))

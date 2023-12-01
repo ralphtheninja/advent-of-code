@@ -178,18 +178,18 @@ function getNeighbours (state, row, col) {
 }
 
 // Tests for neighbours
-deepStrictEqual(getNeighbours(TEST[0], 0, 0), ['.','L','L'])
-deepStrictEqual(getNeighbours(TEST[0], 0, 3), ['.','L','L','L','L'])
-deepStrictEqual(getNeighbours(TEST[0], 0, 9), ['L','L','L'])
-deepStrictEqual(getNeighbours(TEST[0], 4, 9), ['L','L','L','L','L'])
-deepStrictEqual(getNeighbours(TEST[0], 9, 9), ['L','L','.'])
-deepStrictEqual(getNeighbours(TEST[0], 9, 4), ['L','L','L','L','L'])
-deepStrictEqual(getNeighbours(TEST[0], 9, 0), ['L','.','.'])
-deepStrictEqual(getNeighbours(TEST[0], 4, 0), ['L','L','.','.','L'])
-deepStrictEqual(getNeighbours(TEST[0], 4, 4), ['.','L','L','L','L','L','L','L'])
+deepStrictEqual(getNeighbours(TEST[0], 0, 0), ['.', 'L', 'L'])
+deepStrictEqual(getNeighbours(TEST[0], 0, 3), ['.', 'L', 'L', 'L', 'L'])
+deepStrictEqual(getNeighbours(TEST[0], 0, 9), ['L', 'L', 'L'])
+deepStrictEqual(getNeighbours(TEST[0], 4, 9), ['L', 'L', 'L', 'L', 'L'])
+deepStrictEqual(getNeighbours(TEST[0], 9, 9), ['L', 'L', '.'])
+deepStrictEqual(getNeighbours(TEST[0], 9, 4), ['L', 'L', 'L', 'L', 'L'])
+deepStrictEqual(getNeighbours(TEST[0], 9, 0), ['L', '.', '.'])
+deepStrictEqual(getNeighbours(TEST[0], 4, 0), ['L', 'L', '.', '.', 'L'])
+deepStrictEqual(getNeighbours(TEST[0], 4, 4), ['.', 'L', 'L', 'L', 'L', 'L', 'L', 'L'])
 
-deepStrictEqual(getNeighbours(TEST[1], 0, 0), ['.','#','#'])
-deepStrictEqual(getNeighbours(TEST[1], 4, 4), ['.','#','#','#','#','#','#','#'])
+deepStrictEqual(getNeighbours(TEST[1], 0, 0), ['.', '#', '#'])
+deepStrictEqual(getNeighbours(TEST[1], 4, 4), ['.', '#', '#', '#', '#', '#', '#', '#'])
 
 function countOccupied (state) {
   let occupiedCount = 0

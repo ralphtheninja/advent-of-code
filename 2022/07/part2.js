@@ -3,7 +3,7 @@ const assert = require('assert')
 
 function parseCli (cli, debug) {
   const folders = {}
-  let dirStack = []
+  const dirStack = []
 
   function currentPath () {
     return dirStack.length === 1 ? '/' : dirStack.join('/')
@@ -33,7 +33,7 @@ function parseCli (cli, debug) {
     const row = cli[i]
     if (isCommand(row)) {
       const cmd = row.slice(2)
-      const [ op, arg ] = cmd.split(' ')
+      const [op, arg] = cmd.split(' ')
       if (op === 'cd') {
         cd(arg)
         ++i
@@ -50,7 +50,7 @@ function parseCli (cli, debug) {
               const name = row.split(' ')[1]
               listing.push({ type: 'dir', name })
             } else {
-              const [ size, name ] = row.split(' ')
+              const [size, name] = row.split(' ')
               listing.push({ type: 'file', name, size: Number(size) })
             }
           } else {
@@ -74,7 +74,7 @@ function dirSize (tree, dir) {
   assert(Array.isArray(listing))
 
   let totalSize = 0
-  for (let item of listing) {
+  for (const item of listing) {
     if (item.type === 'file') {
       totalSize += item.size
     } else if (item.type === 'dir') {
@@ -144,7 +144,6 @@ function test () {
   assert.equal(candidates[0].size, 24933642)
 }
 
-
 function run (debug) {
   const cli = fs.readFileSync('./data.txt', 'utf8').split('\n').filter(Boolean)
   const tree = parseCli(cli, debug)
@@ -164,7 +163,7 @@ function run (debug) {
   })
 
   const allSizes = calculateAllSizes(tree)
-  //console.log({ allSizes })
+  // console.log({ allSizes })
   const candidates = allSizes.filter(item => item.size >= needFreed)
   console.log({ candidates })
   assert(candidates.length > 0)
@@ -172,6 +171,5 @@ function run (debug) {
   return candidates[0].size
 }
 
-
-//test()
+// test()
 console.log('result', run())

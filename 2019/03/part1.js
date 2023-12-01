@@ -16,7 +16,7 @@ function intersections (coords1, coords2) {
 }
 
 deepStrictEqual(
-  intersections([[1, 2], [3, 3], [5, -1], [4, 0],], [[2, 2], [3, -99], [4, 0], [1, 6]]),
+  intersections([[1, 2], [3, 3], [5, -1], [4, 0]], [[2, 2], [3, -99], [4, 0], [1, 6]]),
   [[4, 0]]
 )
 

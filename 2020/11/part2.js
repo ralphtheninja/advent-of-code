@@ -253,20 +253,20 @@ function getVisibleSeats (state, row, col) {
 }
 
 // Tests for neighbours
-deepStrictEqual(getVisibleSeats(TEST[0], 0, 0), ['L','L','L'])
-deepStrictEqual(getVisibleSeats(TEST[0], 5, 6), ['L','L','L','L','L','L','L','L'])
-deepStrictEqual(getVisibleSeats(TEST[0], 0, 3), ['L', 'L','L','L','L'])
-deepStrictEqual(getVisibleSeats(TEST[0], 0, 9), ['L','L','L'])
-deepStrictEqual(getVisibleSeats(TEST[0], 4, 3), ['L','L','L','L','L','L','L','L'])
-deepStrictEqual(getVisibleSeats(TEST[0], 9, 9), ['L','L','L'])
-deepStrictEqual(getVisibleSeats(TEST[0], 9, 4), ['L','L','L','L','L'])
-deepStrictEqual(getVisibleSeats(TEST[0], 9, 0), ['L','L','L'])
-deepStrictEqual(getVisibleSeats(TEST[0], 4, 0), ['L','L','L','L','L'])
+deepStrictEqual(getVisibleSeats(TEST[0], 0, 0), ['L', 'L', 'L'])
+deepStrictEqual(getVisibleSeats(TEST[0], 5, 6), ['L', 'L', 'L', 'L', 'L', 'L', 'L', 'L'])
+deepStrictEqual(getVisibleSeats(TEST[0], 0, 3), ['L', 'L', 'L', 'L', 'L'])
+deepStrictEqual(getVisibleSeats(TEST[0], 0, 9), ['L', 'L', 'L'])
+deepStrictEqual(getVisibleSeats(TEST[0], 4, 3), ['L', 'L', 'L', 'L', 'L', 'L', 'L', 'L'])
+deepStrictEqual(getVisibleSeats(TEST[0], 9, 9), ['L', 'L', 'L'])
+deepStrictEqual(getVisibleSeats(TEST[0], 9, 4), ['L', 'L', 'L', 'L', 'L'])
+deepStrictEqual(getVisibleSeats(TEST[0], 9, 0), ['L', 'L', 'L'])
+deepStrictEqual(getVisibleSeats(TEST[0], 4, 0), ['L', 'L', 'L', 'L', 'L'])
 
-deepStrictEqual(getVisibleSeats(TEST[1], 0, 0), ['#','#','#'])
-deepStrictEqual(getVisibleSeats(TEST[1], 4, 3), ['#','#','#','#','#','#','#','#'])
+deepStrictEqual(getVisibleSeats(TEST[1], 0, 0), ['#', '#', '#'])
+deepStrictEqual(getVisibleSeats(TEST[1], 4, 3), ['#', '#', '#', '#', '#', '#', '#', '#'])
 
-deepStrictEqual(getVisibleSeats(TEST[6], 4, 3), ['#','L','L','L','L','L','L','L'])
+deepStrictEqual(getVisibleSeats(TEST[6], 4, 3), ['#', 'L', 'L', 'L', 'L', 'L', 'L', 'L'])
 
 function countOccupied (state) {
   let occupiedCount = 0
@@ -316,7 +316,6 @@ do {
     break
   }
 } while (true)
-
 
 const occupiedCount = countOccupied(nextState)
 

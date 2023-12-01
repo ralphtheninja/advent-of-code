@@ -15,7 +15,7 @@ function stepsCost (steps) {
 
 function calculateCost (positions, from) {
   let totalCost = 0
-  for (let to of positions) {
+  for (const to of positions) {
     totalCost += stepsCost(Math.abs(from - to))
   }
   return totalCost

@@ -35,6 +35,4 @@ do {
   } else if (cmd === 'nop') {
     pc++
   }
-
 } while (true)
-

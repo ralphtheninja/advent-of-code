@@ -39,7 +39,7 @@ function playGame (p1, p2, depth = 0) {
       return { won: 'p1', cards: p1 }
     } else {
       // New configuration. Draw cards!
-      history.push([p1.slice(),p2.slice()])
+      history.push([p1.slice(), p2.slice()])
       const c1 = p1.shift()
       const c2 = p2.shift()
       console.log(prefix + 'DREW cards', c1, 'and', c2)
@@ -91,13 +91,13 @@ const TEST = {
   p2: [5, 8, 4, 7, 10]
 }
 
-//const inf = playGame(INF_TEST.p1, INF_TEST.p2)
-//deepStrictEqual(inf.won, 'p1')
+// const inf = playGame(INF_TEST.p1, INF_TEST.p2)
+// deepStrictEqual(inf.won, 'p1')
 
-//const test = playGame(TEST.p1, TEST.p2)
-//deepStrictEqual(test.won, 'p2')
-//deepStrictEqual(test.cards, [7, 5, 6, 2, 4, 1, 10, 8, 9, 3])
-//deepStrictEqual(computeScore(test.cards), 291)
+// const test = playGame(TEST.p1, TEST.p2)
+// deepStrictEqual(test.won, 'p2')
+// deepStrictEqual(test.cards, [7, 5, 6, 2, 4, 1, 10, 8, 9, 3])
+// deepStrictEqual(computeScore(test.cards), 291)
 
 const res = playGame(player1, player2)
 console.log('player', res.won, 'won!')

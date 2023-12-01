@@ -27,7 +27,7 @@ const CELL = [
   '......####',
   '.......###',
   '........##',
-  '.........#',
+  '.........#'
 ]
 const FLIP = [
   '..########',
@@ -39,7 +39,7 @@ const FLIP = [
   '####......',
   '###.......',
   '##........',
-  '#.........',
+  '#.........'
 ]
 const ROT90 = [
   '.........#',
@@ -51,7 +51,7 @@ const ROT90 = [
   '...#######',
   '..########',
   '.########.',
-  '#########.',
+  '#########.'
 ]
 const ROT180 = [
   '#.........',
@@ -63,7 +63,7 @@ const ROT180 = [
   '#######...',
   '########..',
   '#########.',
-  '..########',
+  '..########'
 ]
 const ROT270 = [
   '.#########',
@@ -75,7 +75,7 @@ const ROT270 = [
   '####......',
   '###.......',
   '##........',
-  '#.........',
+  '#.........'
 ]
 
 function rot90 (cell) {
@@ -94,7 +94,7 @@ function rot180 (cell) {
   const result = []
   for (let i = cell.length - 1; i >= 0; --i) {
     let str = ''
-    for (let j = cell[i].length - 1; j >=0; --j) {
+    for (let j = cell[i].length - 1; j >= 0; --j) {
       str += cell[i][j]
     }
     result.push(str)
@@ -118,7 +118,7 @@ function flip (cell) {
   const result = []
   for (let i = 0; i < cell.length; ++i) {
     let str = ''
-    for (let j = cell[i].length - 1; j >=0; --j) {
+    for (let j = cell[i].length - 1; j >= 0; --j) {
       str += cell[i][j]
     }
     result.push(str)
@@ -382,7 +382,7 @@ function findSolution (data) {
     for (let j = 0; j < rowCandidates.length; ++j) {
       if (i === j) continue
       if (rowFits(rowCandidates[i], rowCandidates[j])) {
-        rowPairs.push([ i, j ])
+        rowPairs.push([i, j])
       }
     }
   }
@@ -390,9 +390,9 @@ function findSolution (data) {
   // Time to find SIZE - 1 row pairs that fit together
   for (let i = 0; i < rowPairs.length; ++i) {
     let currentPair = rowPairs[i]
-    let allRows = [currentPair]
+    const allRows = [currentPair]
     while (allRows.length < SIZE - 1) {
-      let next = currentPair[1]
+      const next = currentPair[1]
       const search = rowPairs.find(p => {
         return p[0] === next
       })
@@ -420,90 +420,90 @@ deepStrictEqual(findSolution(TEST_DATA), 20899048083289)
 // Test results below.
 
 const rowCandidates = [
-  [ { id: 2311, perm: 1 }, { id: 1427, perm: 1 }, { id: 1489, perm: 1 } ], // 0
-  [ { id: 2311, perm: 5 }, { id: 1427, perm: 5 }, { id: 1489, perm: 5 } ], // 1
-  [ { id: 1951, perm: 0 }, { id: 2311, perm: 0 }, { id: 3079, perm: 6 } ], // 2
-  [ { id: 1951, perm: 6 }, { id: 2311, perm: 6 }, { id: 3079, perm: 0 } ], // 3
-  [ { id: 1951, perm: 1 }, { id: 2729, perm: 1 }, { id: 2971, perm: 1 } ], // 4
-  [ { id: 1951, perm: 5 }, { id: 2729, perm: 5 }, { id: 2971, perm: 5 } ], // 5
-  [ { id: 1171, perm: 0 }, { id: 1489, perm: 2 }, { id: 2971, perm: 2 } ], // 6
-  [ { id: 1171, perm: 6 }, { id: 1489, perm: 4 }, { id: 2971, perm: 4 } ], // 7
-  [ { id: 1171, perm: 1 }, { id: 2473, perm: 0 }, { id: 3079, perm: 5 } ], // 8
-  [ { id: 1171, perm: 5 }, { id: 2473, perm: 6 }, { id: 3079, perm: 1 } ], // 9
-  [ { id: 1489, perm: 3 }, { id: 1427, perm: 3 }, { id: 2311, perm: 3 } ], // 10
-  [ { id: 1489, perm: 7 }, { id: 1427, perm: 7 }, { id: 2311, perm: 7 } ], // 11
-  [ { id: 2473, perm: 3 }, { id: 1427, perm: 2 }, { id: 2729, perm: 2 } ], // 12
-  [ { id: 2473, perm: 7 }, { id: 1427, perm: 4 }, { id: 2729, perm: 4 } ], // 13
-  [ { id: 2971, perm: 0 }, { id: 1489, perm: 0 }, { id: 1171, perm: 2 } ], // 14
-  [ { id: 2971, perm: 6 }, { id: 1489, perm: 6 }, { id: 1171, perm: 4 } ], // 15
-  [ { id: 2971, perm: 3 }, { id: 2729, perm: 3 }, { id: 1951, perm: 3 } ], // 16
-  [ { id: 2971, perm: 7 }, { id: 2729, perm: 7 }, { id: 1951, perm: 7 } ], // 17
-  [ { id: 2729, perm: 0 }, { id: 1427, perm: 0 }, { id: 2473, perm: 1 } ], // 18
-  [ { id: 2729, perm: 6 }, { id: 1427, perm: 6 }, { id: 2473, perm: 5 } ], // 19
-  [ { id: 3079, perm: 4 }, { id: 2311, perm: 2 }, { id: 1951, perm: 2 } ], // 20
-  [ { id: 3079, perm: 2 }, { id: 2311, perm: 4 }, { id: 1951, perm: 4 } ], // 21
-  [ { id: 3079, perm: 7 }, { id: 2473, perm: 2 }, { id: 1171, perm: 3 } ], // 22
-  [ { id: 3079, perm: 3 }, { id: 2473, perm: 4 }, { id: 1171, perm: 7 } ], // 23
+  [{ id: 2311, perm: 1 }, { id: 1427, perm: 1 }, { id: 1489, perm: 1 }], // 0
+  [{ id: 2311, perm: 5 }, { id: 1427, perm: 5 }, { id: 1489, perm: 5 }], // 1
+  [{ id: 1951, perm: 0 }, { id: 2311, perm: 0 }, { id: 3079, perm: 6 }], // 2
+  [{ id: 1951, perm: 6 }, { id: 2311, perm: 6 }, { id: 3079, perm: 0 }], // 3
+  [{ id: 1951, perm: 1 }, { id: 2729, perm: 1 }, { id: 2971, perm: 1 }], // 4
+  [{ id: 1951, perm: 5 }, { id: 2729, perm: 5 }, { id: 2971, perm: 5 }], // 5
+  [{ id: 1171, perm: 0 }, { id: 1489, perm: 2 }, { id: 2971, perm: 2 }], // 6
+  [{ id: 1171, perm: 6 }, { id: 1489, perm: 4 }, { id: 2971, perm: 4 }], // 7
+  [{ id: 1171, perm: 1 }, { id: 2473, perm: 0 }, { id: 3079, perm: 5 }], // 8
+  [{ id: 1171, perm: 5 }, { id: 2473, perm: 6 }, { id: 3079, perm: 1 }], // 9
+  [{ id: 1489, perm: 3 }, { id: 1427, perm: 3 }, { id: 2311, perm: 3 }], // 10
+  [{ id: 1489, perm: 7 }, { id: 1427, perm: 7 }, { id: 2311, perm: 7 }], // 11
+  [{ id: 2473, perm: 3 }, { id: 1427, perm: 2 }, { id: 2729, perm: 2 }], // 12
+  [{ id: 2473, perm: 7 }, { id: 1427, perm: 4 }, { id: 2729, perm: 4 }], // 13
+  [{ id: 2971, perm: 0 }, { id: 1489, perm: 0 }, { id: 1171, perm: 2 }], // 14
+  [{ id: 2971, perm: 6 }, { id: 1489, perm: 6 }, { id: 1171, perm: 4 }], // 15
+  [{ id: 2971, perm: 3 }, { id: 2729, perm: 3 }, { id: 1951, perm: 3 }], // 16
+  [{ id: 2971, perm: 7 }, { id: 2729, perm: 7 }, { id: 1951, perm: 7 }], // 17
+  [{ id: 2729, perm: 0 }, { id: 1427, perm: 0 }, { id: 2473, perm: 1 }], // 18
+  [{ id: 2729, perm: 6 }, { id: 1427, perm: 6 }, { id: 2473, perm: 5 }], // 19
+  [{ id: 3079, perm: 4 }, { id: 2311, perm: 2 }, { id: 1951, perm: 2 }], // 20
+  [{ id: 3079, perm: 2 }, { id: 2311, perm: 4 }, { id: 1951, perm: 4 }], // 21
+  [{ id: 3079, perm: 7 }, { id: 2473, perm: 2 }, { id: 1171, perm: 3 }], // 22
+  [{ id: 3079, perm: 3 }, { id: 2473, perm: 4 }, { id: 1171, perm: 7 }] // 23
 ]
 
 // Pairs from test data:
 const pairs = [
-  [ 0, 22 ],
-  [ 1, 5 ],
-  [ 3, 19 ],
-  [ 4, 0 ],
-  [ 7, 13 ],
-  [ 8, 10 ],
-  [ 10, 16 ],
-  [ 11, 9 ],
-  [ 12, 6 ],
-  [ 13, 21 ],
-  [ 14, 18 ],
-  [ 17, 11 ],
-  [ 18, 2 ],
-  [ 19, 15 ],
-  [ 20, 12 ],
-  [ 23, 1 ]
+  [0, 22],
+  [1, 5],
+  [3, 19],
+  [4, 0],
+  [7, 13],
+  [8, 10],
+  [10, 16],
+  [11, 9],
+  [12, 6],
+  [13, 21],
+  [14, 18],
+  [17, 11],
+  [18, 2],
+  [19, 15],
+  [20, 12],
+  [23, 1]
 ]
 
 // Goal: Find two (SIZE - 1) row pairs that fit together
 const possiblePairs = [
-  [[ 3, 19 ], [ 19, 15 ]], // VALID! (as the website shows)
+  [[3, 19], [19, 15]], // VALID! (as the website shows)
   // [ { id: 1951, perm: 6 }, { id: 2311, perm: 6 }, { id: 3079, perm: 0 } ], // 3
   // [ { id: 2729, perm: 6 }, { id: 1427, perm: 6 }, { id: 2473, perm: 5 } ], // 19
   // [ { id: 2971, perm: 6 }, { id: 1489, perm: 6 }, { id: 1171, perm: 4 } ], // 15
 
-  [[ 17, 11 ], [ 11, 9 ]], // VALID! (big matrix rotated 90)
+  [[17, 11], [11, 9]], // VALID! (big matrix rotated 90)
   // [ { id: 2971, perm: 7 }, { id: 2729, perm: 7 }, { id: 1951, perm: 7 } ], // 17
   // [ { id: 1489, perm: 7 }, { id: 1427, perm: 7 }, { id: 2311, perm: 7 } ], // 11
   // [ { id: 1171, perm: 5 }, { id: 2473, perm: 6 }, { id: 3079, perm: 1 } ], // 9
 
-  [[ 7, 13 ], [ 13, 21 ]], // VALID! (big matrix rotated 180)
+  [[7, 13], [13, 21]], // VALID! (big matrix rotated 180)
   // [ { id: 1171, perm: 6 }, { id: 1489, perm: 4 }, { id: 2971, perm: 4 } ], // 7
   // [ { id: 2473, perm: 7 }, { id: 1427, perm: 4 }, { id: 2729, perm: 4 } ], // 13
   // [ { id: 3079, perm: 2 }, { id: 2311, perm: 4 }, { id: 1951, perm: 4 } ], // 21
 
-  [[ 23, 1 ], [ 1, 5 ]],   // VALID (big matrix rotated 270)
+  [[23, 1], [1, 5]], // VALID (big matrix rotated 270)
   // [ { id: 3079, perm: 3 }, { id: 2473, perm: 4 }, { id: 1171, perm: 7 } ], // 23
   // [ { id: 2311, perm: 1 }, { id: 1427, perm: 1 }, { id: 1489, perm: 1 } ], // 0
   // [ { id: 1951, perm: 5 }, { id: 2729, perm: 5 }, { id: 2971, perm: 5 } ], // 5
 
-  [[ 20, 12 ], [ 12, 6 ]], // VALID! (big matrix flipped)
+  [[20, 12], [12, 6]], // VALID! (big matrix flipped)
   // [ { id: 3079, perm: 4 }, { id: 2311, perm: 2 }, { id: 1951, perm: 2 } ], // 20
   // [ { id: 2473, perm: 3 }, { id: 1427, perm: 2 }, { id: 2729, perm: 2 } ], // 12
   // [ { id: 1171, perm: 0 }, { id: 1489, perm: 2 }, { id: 2971, perm: 2 } ], // 6
 
-  [[ 8, 10 ], [ 10, 16 ]], // VALID! (big matrix flipped and rotated 90)
+  [[8, 10], [10, 16]], // VALID! (big matrix flipped and rotated 90)
   // [ { id: 1171, perm: 1 }, { id: 2473, perm: 0 }, { id: 3079, perm: 5 } ], // 8
   // [ { id: 1489, perm: 3 }, { id: 1427, perm: 3 }, { id: 2311, perm: 3 } ], // 10
   // [ { id: 2971, perm: 3 }, { id: 2729, perm: 3 }, { id: 1951, perm: 3 } ], // 16
 
-  [[ 14, 18 ], [ 18, 2 ]], // VALID! (big matrix flipped and rotated 180)
+  [[14, 18], [18, 2]], // VALID! (big matrix flipped and rotated 180)
   // [ { id: 2971, perm: 0 }, { id: 1489, perm: 0 }, { id: 1171, perm: 2 } ], // 14
   // [ { id: 2729, perm: 0 }, { id: 1427, perm: 0 }, { id: 2473, perm: 1 } ], // 18
   // [ { id: 1951, perm: 0 }, { id: 2311, perm: 0 }, { id: 3079, perm: 6 } ], // 2
 
-  [[ 4, 0 ], [ 0, 22 ]],   // VALID! (big matrix flipped and rotated 270)
+  [[4, 0], [0, 22]] // VALID! (big matrix flipped and rotated 270)
   // [ { id: 1951, perm: 1 }, { id: 2729, perm: 1 }, { id: 2971, perm: 1 } ], // 4
   // [ { id: 2311, perm: 1 }, { id: 1427, perm: 1 }, { id: 1489, perm: 1 } ], // 0
   // [ { id: 3079, perm: 7 }, { id: 2473, perm: 2 }, { id: 1171, perm: 3 } ], // 22

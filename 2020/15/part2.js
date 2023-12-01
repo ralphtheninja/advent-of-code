@@ -44,8 +44,8 @@ const TEST2020 = [
 TEST2020.forEach(t => deepStrictEqual(compute(t.input, 2020), t.result))
 
 const TEST = [
-  { input: [0, 3, 6], result: 175594 },  // correct, t = 11:26 minutes
-  { input: [1, 3, 2], result: 2578 },    // correct, t = 13:24 minutes
+  { input: [0, 3, 6], result: 175594 }, // correct, t = 11:26 minutes
+  { input: [1, 3, 2], result: 2578 }, // correct, t = 13:24 minutes
   { input: [2, 1, 3], result: 3544142 },
   { input: [1, 2, 3], result: 261214 },
   { input: [2, 3, 1], result: 6895259 },
@@ -53,5 +53,5 @@ const TEST = [
   { input: [3, 1, 2], result: 362 }
 ]
 
-//TEST.forEach(t => deepStrictEqual(compute(t.input, 30000000), t.result))
+// TEST.forEach(t => deepStrictEqual(compute(t.input, 30000000), t.result))
 console.log(compute(INPUT, 30000000))

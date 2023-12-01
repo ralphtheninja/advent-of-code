@@ -18,8 +18,8 @@ function findValidContainer (bag) {
   const containers = []
   rules.forEach((value, key) => {
     value.forEach(([name, count]) => {
-       if (name === bag) {
-         containers.push(key)
+      if (name === bag) {
+        containers.push(key)
       }
     })
   })

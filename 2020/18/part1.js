@@ -78,4 +78,3 @@ deepStrictEqual(evaluate('5*9*(7*3*3+9*3+(8+6*4))'), 12240)
 deepStrictEqual(evaluate('((2+4*9)*(6+9*8+6)+6)+2+4*2'), 13632)
 
 console.log(DATA.map(evaluate).reduce((total, sum) => total + sum, 0))
-

@@ -13,16 +13,16 @@ function run (file) {
 
   const visited = { '0,0': true }
   const rope = [
-    { x: 0, y: 0},
-    { x: 0, y: 0},
-    { x: 0, y: 0},
-    { x: 0, y: 0},
-    { x: 0, y: 0},
-    { x: 0, y: 0},
-    { x: 0, y: 0},
-    { x: 0, y: 0},
-    { x: 0, y: 0},
-    { x: 0, y: 0},
+    { x: 0, y: 0 },
+    { x: 0, y: 0 },
+    { x: 0, y: 0 },
+    { x: 0, y: 0 },
+    { x: 0, y: 0 },
+    { x: 0, y: 0 },
+    { x: 0, y: 0 },
+    { x: 0, y: 0 },
+    { x: 0, y: 0 },
+    { x: 0, y: 0 }
   ]
 
   motions.forEach(({ dir, steps }) => {
@@ -64,15 +64,15 @@ function run (file) {
   return Object.keys(visited).length
 }
 
-assert.equal(inTouch({ x: 0, y: 0 }, { x: 0, y: 0 }), true)   // on top
-assert.equal(inTouch({ x: -1, y: 0 }, { x: 0, y: 0 }), true)  // w
-assert.equal(inTouch({ x: 1, y: 0 }, { x: 0, y: 0 }), true)   // e
-assert.equal(inTouch({ x: 0, y: -1 }, { x: 0, y: 0 }), true)  // s
-assert.equal(inTouch({ x: 0, y: 1 }, { x: 0, y: 0 }), true)   // n
-assert.equal(inTouch({ x: 1, y: 1 }, { x: 0, y: 0 }), true)   // ne
-assert.equal(inTouch({ x: -1, y: 1 }, { x: 0, y: 0 }), true)  // nw
+assert.equal(inTouch({ x: 0, y: 0 }, { x: 0, y: 0 }), true) // on top
+assert.equal(inTouch({ x: -1, y: 0 }, { x: 0, y: 0 }), true) // w
+assert.equal(inTouch({ x: 1, y: 0 }, { x: 0, y: 0 }), true) // e
+assert.equal(inTouch({ x: 0, y: -1 }, { x: 0, y: 0 }), true) // s
+assert.equal(inTouch({ x: 0, y: 1 }, { x: 0, y: 0 }), true) // n
+assert.equal(inTouch({ x: 1, y: 1 }, { x: 0, y: 0 }), true) // ne
+assert.equal(inTouch({ x: -1, y: 1 }, { x: 0, y: 0 }), true) // nw
 assert.equal(inTouch({ x: -1, y: -1 }, { x: 0, y: 0 }), true) // sw
-assert.equal(inTouch({ x: 1, y: -1 }, { x: 0, y: 0 }), true)  // se
+assert.equal(inTouch({ x: 1, y: -1 }, { x: 0, y: 0 }), true) // se
 
 assert.equal(inTouch({ x: 2, y: 0 }, { x: 0, y: 0 }), false)
 assert.equal(inTouch({ x: -2, y: 0 }, { x: 0, y: 0 }), false)

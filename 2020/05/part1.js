@@ -48,8 +48,8 @@ function getSeatId (pass) {
 
 // Tests
 
-assert.deepStrictEqual(getLowerHalf([0, 127]), [0, 63])  // F
-assert.deepStrictEqual(getUpperHalf([0, 63]), [32, 63])  // B
+assert.deepStrictEqual(getLowerHalf([0, 127]), [0, 63]) // F
+assert.deepStrictEqual(getUpperHalf([0, 63]), [32, 63]) // B
 assert.deepStrictEqual(getLowerHalf([32, 63]), [32, 47]) // F
 assert.deepStrictEqual(getUpperHalf([32, 47]), [40, 47]) // B
 assert.deepStrictEqual(getUpperHalf([40, 47]), [44, 47]) // B
@@ -73,9 +73,8 @@ assert.equal(getSeatId('BBFFBBFRLL'), 820)
 
 console.log('number of boarding passes', passes.length)
 
-let maxSeatId = passes.map(getSeatId).reduce((item, max) => {
+const maxSeatId = passes.map(getSeatId).reduce((item, max) => {
   if (item > max) return item
   else return max
 }, 0)
 console.log('max seat id', maxSeatId)
-

@@ -3,9 +3,9 @@ const { deepStrictEqual } = require('assert')
 const DATA = fs.readFileSync('./data.txt', 'utf8').split('\n').filter(Boolean)
 
 function manhattanDistance (instructions) {
-  let position = { x: 0, y: 0 }
+  const position = { x: 0, y: 0 }
   let waypoint = { x: 10, y: 1 }
-  //let direction = 90
+  // let direction = 90
 
   instructions.forEach(i => {
     const cmd = i[0]

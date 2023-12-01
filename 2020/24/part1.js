@@ -11,7 +11,7 @@ function readFile (file) {
 
 function parseRow (row) {
   const result = []
-  let i = 0;
+  let i = 0
   while (i < row.length) {
     const char = row[i]
     if (char === 'e' || char === 'w') {
@@ -33,7 +33,7 @@ deepStrictEqual(
 )
 
 function countBlacks (rows) {
-  const SQRT = Math.sqrt(3)/2
+  const SQRT = Math.sqrt(3) / 2
   const EPS = 5e-6
   const tiles = []
 
@@ -45,16 +45,16 @@ function countBlacks (rows) {
       } else if (move === 'w') {
         tile.x--
       } else if (move === 'nw') {
-        tile.x -= 1/2
+        tile.x -= 1 / 2
         tile.y += SQRT
       } else if (move === 'ne') {
-        tile.x += 1/2
+        tile.x += 1 / 2
         tile.y += SQRT
       } else if (move === 'sw') {
-        tile.x -= 1/2
+        tile.x -= 1 / 2
         tile.y -= SQRT
       } else if (move === 'se') {
-        tile.x += 1/2
+        tile.x += 1 / 2
         tile.y -= SQRT
       } else {
         throw new Error('should not happen')
@@ -77,8 +77,8 @@ function countBlacks (rows) {
   }, 0)
 }
 
-//const TEST_DATA = readFile('./test-data.txt')
-//deepStrictEqual(countBlacks(TEST_DATA), 10)
+// const TEST_DATA = readFile('./test-data.txt')
+// deepStrictEqual(countBlacks(TEST_DATA), 10)
 
 const DATA = readFile('./data.txt')
 console.log('result:', countBlacks(DATA))

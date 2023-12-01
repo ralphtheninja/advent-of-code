@@ -105,7 +105,6 @@ function solution (adapters) {
     }
 
     count *= multiplicator
-
   } while (i < adapters.length - 1)
 
   return count

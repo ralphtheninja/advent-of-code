@@ -72,4 +72,3 @@ for (let size = numbers.length - 1; size > 1; size--) {
     }
   })
 }
-

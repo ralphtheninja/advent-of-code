@@ -34,4 +34,3 @@ for (let i = 25; i < data.length; ++i) {
     process.exit(0)
   }
 }
-

@@ -54,7 +54,7 @@ function isValidPassport (passport) {
         'gry',
         'grn',
         'hzl',
-        'oth',
+        'oth'
       ].includes(value)
     } else if (key === 'pid') {
       return value.length === 9 && value.match(/[0-9]{9}/)
