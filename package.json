@@ -1,0 +1,23 @@
+{
+  "name": "advent-of-code",
+  "version": "1.0.0",
+  "description": "> https://adventofcode.com/",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ralphtheninja/advent-of-code.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ralphtheninja/advent-of-code/issues"
+  },
+  "homepage": "https://github.com/ralphtheninja/advent-of-code#readme",
+  "devDependencies": {
+    "standard": "^17.1.0"
+  }
+}
