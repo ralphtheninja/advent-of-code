@@ -6,18 +6,14 @@ function run (file) {
   const digits = lines.map(line => {
     let first, last
     for (let i = 0; i < line.length; ++i) {
-      const c = line[i]
-      if (!first) {
-        if (!isNaN(Number(c))) {
-          first = Number(c)
+      const N = Number(line[i])
+      if (!isNaN(N)) {
+        if (!first) {
+          first = N
         }
-      } else {
-        if (!isNaN(Number(c))) {
-          last = Number(c)
-        }
+        last = N
       }
     }
-    if (!last) last = first
     return 10 * first + last
   })
   return digits.reduce((tot, el) => tot + el, 0)
