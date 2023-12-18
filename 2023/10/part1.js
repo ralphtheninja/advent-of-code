@@ -79,7 +79,7 @@ function parse (file) {
   } else if (n && CONNECTS_SOUTH.includes(nCell) &&
              w && CONNECTS_EAST.includes(wCell)) {
     SPIPE = TILES.NW
-  } else if (s && CONNECTS_NORTH.includes(nCell) &&
+  } else if (s && CONNECTS_NORTH.includes(sCell) &&
              w && CONNECTS_EAST.includes(wCell)) {
     SPIPE = TILES.SW
   } else if (s && CONNECTS_NORTH.includes(sCell) &&
